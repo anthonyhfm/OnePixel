@@ -1,16 +1,25 @@
 # OnePixel
 
-**Samsung hardware. Google Pixel experience.**
-
 OnePixel is my personal collection of tools, launchers, and system UI replacements that aim to make Samsung's One UI look, feel, and behave as closely as possible to a Google Pixel phone.
 
 I love Samsung's hardware and prefer Google's approach to software. OnePixel brings those preferences together, one component at a time.
+
+> [!NOTE]
+> Currently, OnePixel is targeted at OneUI 8 with Android 16 due to my own hardware limitations. Its future goal is to support OneUI 9 and whatever comes after :D
 
 ## Goals
 
 - Recreate the Pixel experience in both appearance and interaction.
 - Build focused components for individual parts of the experience, such as the notification shade or volume slider.
 - Keep each component easy to develop and maintain on its own.
+
+## Accomplishments
+
+1. 🏠 Bringing the [Pixel Launcher](launcher/readme.md) to One UI
+   - Patched system functions for One UI compatibility
+   - Circular Pixel icons and folder shapes
+   - App search, live web suggestions, and cross-app search
+   - Rootless Shizuku+ integration for task and animation APIs
 
 ## How the ports work
 
@@ -21,26 +30,6 @@ We keep the original Pixel interface and behavior where they work. OnePixel supp
 The repository contains our Kotlin code, patch files, resources, dependency declarations, and documentation. Original APKs, decoded Google code, generated outputs, signing keys, and device diagnostics stay outside the repository. Each developer extracts their own supported emulator input.
 
 New implementation and development tools should use **Kotlin wherever practical**. Smali patches remain necessary to connect our code to the original APK. Small shell entry points and standard Gradle wrapper files are the exceptions.
-
-## Project structure
-
-Each subproject lives in its own top-level directory, with its source code, build configuration, and documentation kept together. Avoid a single, cluttered Gradle project containing every component.
-
-Component layout:
-
-```text
-OnePixel/
-├── readme.md
-├── agents.md
-├── launcher/
-│   └── …
-├── notification-shade/
-│   └── …
-└── volume-slider/
-    └── …
-```
-
-The `launcher/` directory contains the first experiment. `notification-shade/` and `volume-slider/` are planned components.
 
 ## Status
 
