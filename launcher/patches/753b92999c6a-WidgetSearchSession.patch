@@ -1,0 +1,14 @@
+# class: LK2/a;
+--- a/K2/a.smali
++++ b/K2/a.smali
+@@ -172,6 +172,10 @@
+ 
+     .line 65
+     check-cast v0, Landroid/app/search/SearchUiManager;
++
++    if-nez v0, :onepixel_widget_search_available
++    return-void
++    :onepixel_widget_search_available
+ 
+     .line 66
+     .line 67

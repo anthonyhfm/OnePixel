@@ -13,6 +13,7 @@ Tested on a Samsung SM-F936N running Android 16 / One UI 8:
 - Logs confirm that task queries, remote-animation registration, and registration of the next app-launch animation run through Shizuku+.
 - Launcher search combines local app matches, live web suggestions, and search actions for Google, YouTube, Maps, Play Store, settings, and contacts when the relevant app can handle the query. Suggestion arrows use the original query builder.
 - Device checks confirm query transfer from the launcher into Play Store (`goodnotes`), Samsung settings search (`WLAN`), and Samsung contacts search (`OnePixel`). A web-suggestion click opens Google search with the selected suggestion.
+- The widget picker opens, filters local widgets, and displays widget previews without requiring Pixel's system search service.
 
 Animation registration succeeding does not establish that every transition matches a Pixel. Samsung's system gestures, recents screen, and taskbar integration have not been replaced. The inner folding display has not been tested.
 
@@ -36,6 +37,8 @@ App-search actions pass the current query into the destination app:
 On the tested Samsung, settings search is provided by `com.android.settings.intelligence`. Contacts uses Samsung's `ContactSearchActivity` with `CLEAR_TOP` so an existing contacts task opens the requested search. These actions open the matching app's search screen; they do not query the contacts database or settings index inside the launcher.
 
 Web suggestions use the device's language, a 150 ms debounce, a short in-memory cache, timeouts, and generation checks to discard obsolete responses. No account cookies are sent. Typed queries are sent to `suggestqueries.google.com`; local app matching and app-search actions work without that request succeeding. The original web-search preference continues to control whether the launcher requests web suggestions.
+
+Widget search retains the launcher's built-in local filtering. If `SearchUiManager` is absent, its optional search session is skipped so the existing local fallback can run.
 
 This is a compatible implementation, not the original Pixel search backend. Account-personalized suggestions, rich answer cards, Play Store suggestions, and Pixel's system settings/shortcut corpus are not reproduced. The HTTPS suggestion endpoint is not a documented public Google API and can change; failure leaves the local results and search actions available. Language, region, account state, and installed apps can also change the results compared with an emulator.
 
