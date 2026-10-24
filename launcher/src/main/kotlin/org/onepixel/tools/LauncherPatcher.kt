@@ -34,11 +34,10 @@ internal class LauncherPatcher(
         )
             .import(original = original, decoded = decoded)
 
-        environment.module
-            .resolve(relative = "resources")
-            .copyRecursively(
-                target = decoded.resolve(relative = "res"),
-                overwrite = true
+        ResourceOverrides()
+            .apply(
+                source = environment.module.resolve(relative = "resources"),
+                destination = decoded.resolve(relative = "res")
             )
 
         ManifestPatcher(packageName = environment.source.packageName)

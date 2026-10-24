@@ -14,8 +14,9 @@ Tested on a Samsung SM-F936N running Android 16 / One UI 8:
 - Launcher search combines local app matches, live web suggestions, and search actions for Google, YouTube, Maps, Play Store, settings, and contacts when the relevant app can handle the query. Suggestion arrows use the original query builder.
 - Device checks confirm query transfer from the launcher into Play Store (`goodnotes`), Samsung settings search (`WLAN`), and Samsung contacts search (`OnePixel`). A web-suggestion click opens Google search with the selected suggestion.
 - The widget picker opens, filters local widgets, and displays widget previews without requiring Pixel's system search service.
+- An ADB-forced switch between cover and inner-display configurations (904×2316 ↔ 1812×2176) keeps the launcher running. Physical folding remains a separate verification step.
 
-Animation registration succeeding does not establish that every transition matches a Pixel. Samsung's system gestures, recents screen, and taskbar integration have not been replaced. The inner folding display has not been tested.
+Animation registration succeeding does not establish that every transition matches a Pixel. Samsung's system gestures, recents screen, and taskbar integration have not been replaced.
 
 Pixel's system search service and Pixel-specific Android System Intelligence search provider are absent on the tested Samsung. Google's OneSearch and Play providers also reject this locally signed APK with a first-party signature error. Search uses the compatibility backend described below. Prediction initialization tolerates missing permissions. The existing overlay fallback is used instead of Pixel's system TaskFragment overlay.
 
@@ -116,13 +117,15 @@ Patches target that input and Apktool 3.0.3's output. To support a different emu
 | `src/main/kotlin/` | Kotlin CLI for pull, patch, apply, startup checks, and Shizuku+ startup |
 | `src/compat/kotlin/` | Kotlin search, icon, display, settings, color, and privileged Binder helpers injected into the launcher |
 | `patches/` | Unified smali diffs against the supported original APK, selected by class descriptor |
-| `resources/` | Additional localized search labels |
+| `resources/` | Localized search labels and compatibility resource overrides |
 | `source.properties` | Supported input checksums and Android SDK versions |
 | `build.gradle.kts` | Standalone Kotlin build and declared dependencies |
 | `gradle/` | Standard wrapper and dependency verification metadata |
 | `licenses/` | Notices and dependency license texts |
 
 The JVM tools keep command dispatch in `LauncherCli`, environment and source validation in `LauncherEnvironment` and `SourceSpec`, and process/device access in `ProcessRunner`, `AndroidDevice`, and `AndroidTools`. `EmulatorPull`, `LauncherPatcher`, `LauncherDeviceActions`, and `ShizukuStarter` own their respective commands. APK patching delegates smali diffs, runtime import, manifest changes, framework resources, and signing to focused helpers.
+
+`ResourceOverrides` merges values by resource type and name, replacing existing definitions while preserving their public IDs. The launcher uses the supported Pixel build's local float value `1.1` for `config_wallpaperMaxScale`: its original private framework reference resolves to a different Samsung resource and crashes tablet-profile initialization when read as a float.
 
 The compatibility code deliberately uses Android/JDK APIs without runtime Kotlin standard-library calls. Google's APK already includes an obfuscated Kotlin runtime; injecting another copy can cause class collisions. The patch command checks the generated helper smali for Kotlin runtime calls and checks all injected classes for collisions. JVM-side development tools can use ordinary Kotlin.
 
