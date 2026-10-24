@@ -1,0 +1,22 @@
+# class: Lcom/google/android/apps/nexuslauncher/allapps/T0;
+--- a/com/google/android/apps/nexuslauncher/allapps/T0.smali
++++ b/com/google/android/apps/nexuslauncher/allapps/T0.smali
+@@ -995,7 +995,8 @@
+ .end method
+ 
+ .method public final d(Landroid/app/search/Query;Z)Ljava/util/List;
+-    .locals 12
++    .locals 13
++    iget-object v12, p0, Lcom/google/android/apps/nexuslauncher/allapps/T0;->b:Landroid/content/Context;
+ 
+     .line 1
+     const/4 v0, 0x1
+@@ -1676,6 +1677,8 @@
+     .line 339
+     .line 340
+     .line 341
++    invoke-static {v12, p1, v1}, Lorg/onepixel/compat/SearchCompat;->augmentLocal(Landroid/content/Context;Ljava/lang/Object;Ljava/util/List;)Ljava/util/List;
++    move-result-object v1
+     return-object v1
+ .end method
+ 

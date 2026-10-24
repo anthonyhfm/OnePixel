@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/icons/mono/MonoIconThemeController$ClippedMonoDrawable;
+--- a/com/android/launcher3/icons/mono/MonoIconThemeController$ClippedMonoDrawable.smali
++++ b/com/android/launcher3/icons/mono/MonoIconThemeController$ClippedMonoDrawable.smali
+@@ -117,7 +117,7 @@
+ 
+     .line 18
+     .line 19
+-    invoke-virtual {v1}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {v1}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     .line 20
+     .line 21

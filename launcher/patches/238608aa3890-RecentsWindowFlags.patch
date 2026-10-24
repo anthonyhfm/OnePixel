@@ -1,0 +1,84 @@
+# class: Lcom/android/quickstep/fallback/window/RecentsWindowFlags;
+--- a/com/android/quickstep/fallback/window/RecentsWindowFlags.smali
++++ b/com/android/quickstep/fallback/window/RecentsWindowFlags.smali
+@@ -15,79 +15,11 @@
+ 
+ # direct methods
+ .method static constructor <clinit>()V
+-    .locals 3
+-
+-    .line 1
++    .locals 2
+     new-instance v0, Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion;
+-
+-    .line 2
+-    .line 3
+     const/4 v1, 0x0
+-
+-    .line 4
+     invoke-direct {v0, v1}, Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion;-><init>(Lkotlin/jvm/internal/g;)V
+-
+-    .line 5
+-    .line 6
+-    .line 7
+     sput-object v0, Lcom/android/quickstep/fallback/window/RecentsWindowFlags;->Companion:Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion;
+-
+-    .line 8
+-    .line 9
+-    new-instance v0, Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 10
+-    .line 11
+-    sget-object v1, Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableLauncherOverviewInWindow$1;->INSTANCE:Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableLauncherOverviewInWindow$1;
+-
+-    .line 12
+-    .line 13
+-    const/4 v2, 0x0
+-
+-    .line 14
+-    invoke-direct {v0, v1, v2}, Landroid/window/DesktopModeFlags$DesktopModeFlag;-><init>(Ljava/util/function/BooleanSupplier;Z)V
+-
+-    .line 15
+-    .line 16
+-    .line 17
+-    sput-object v0, Lcom/android/quickstep/fallback/window/RecentsWindowFlags;->enableLauncherOverviewInWindow:Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 18
+-    .line 19
+-    new-instance v0, Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 20
+-    .line 21
+-    sget-object v1, Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableFallbackOverviewInWindow$1;->INSTANCE:Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableFallbackOverviewInWindow$1;
+-
+-    .line 22
+-    .line 23
+-    invoke-direct {v0, v1, v2}, Landroid/window/DesktopModeFlags$DesktopModeFlag;-><init>(Ljava/util/function/BooleanSupplier;Z)V
+-
+-    .line 24
+-    .line 25
+-    .line 26
+-    sput-object v0, Lcom/android/quickstep/fallback/window/RecentsWindowFlags;->enableFallbackOverviewInWindow:Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 27
+-    .line 28
+-    new-instance v0, Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 29
+-    .line 30
+-    sget-object v1, Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableOverviewOnConnectedDisplays$1;->INSTANCE:Lcom/android/quickstep/fallback/window/RecentsWindowFlags$Companion$enableOverviewOnConnectedDisplays$1;
+-
+-    .line 31
+-    .line 32
+-    invoke-direct {v0, v1, v2}, Landroid/window/DesktopModeFlags$DesktopModeFlag;-><init>(Ljava/util/function/BooleanSupplier;Z)V
+-
+-    .line 33
+-    .line 34
+-    .line 35
+-    sput-object v0, Lcom/android/quickstep/fallback/window/RecentsWindowFlags;->enableOverviewOnConnectedDisplays:Landroid/window/DesktopModeFlags$DesktopModeFlag;
+-
+-    .line 36
+-    .line 37
+     return-void
+ .end method
+ 

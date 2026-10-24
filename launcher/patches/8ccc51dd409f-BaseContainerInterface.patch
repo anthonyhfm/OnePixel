@@ -1,0 +1,30 @@
+# class: Lcom/android/quickstep/BaseContainerInterface;
+--- a/com/android/quickstep/BaseContainerInterface.smali
++++ b/com/android/quickstep/BaseContainerInterface.smali
+@@ -229,7 +229,7 @@
+ 
+     .line 16
+     :goto_1
+-    invoke-virtual {p3, v1}, Landroid/graphics/Rect;->inset(Landroid/graphics/Rect;)V
++    invoke-static {p3, v1}, Lorg/onepixel/compat/DisplayCompat;->inset(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     .line 17
+     invoke-virtual {p8, p5, v0, p5, p4}, Landroid/graphics/Rect;->set(IIII)V
+@@ -238,7 +238,7 @@
+     invoke-interface {p9, p8, p8}, Lcom/android/quickstep/orientation/RecentsPagedOrientationHandler;->rotateInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     .line 19
+-    invoke-virtual {p3, p8}, Landroid/graphics/Rect;->inset(Landroid/graphics/Rect;)V
++    invoke-static {p3, p8}, Lorg/onepixel/compat/DisplayCompat;->inset(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     move p4, p6
+ 
+@@ -1224,7 +1224,7 @@
+ 
+     .line 39
+     .line 40
+-    invoke-virtual {p0}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p0}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 41
+     .line 42

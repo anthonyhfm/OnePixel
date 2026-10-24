@@ -1,0 +1,12 @@
+# class: Lcom/android/quickstep/RecentsAnimationDeviceState;
+--- a/com/android/quickstep/RecentsAnimationDeviceState.smali
++++ b/com/android/quickstep/RecentsAnimationDeviceState.smali
+@@ -467,7 +467,7 @@
+     const/4 p2, 0x2
+ 
+     .line 191
+-    invoke-interface {p1, p2, p4}, Landroid/app/IActivityTaskManager;->getRootTaskInfo(II)Landroid/app/ActivityTaskManager$RootTaskInfo;
++    invoke-static {p1, p2, p4}, Lorg/onepixel/compat/TaskBridge;->getRootTaskInfo(Landroid/app/IActivityTaskManager;II)Landroid/app/ActivityTaskManager$RootTaskInfo;
+ 
+     .line 192
+     .line 193

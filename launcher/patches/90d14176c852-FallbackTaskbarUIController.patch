@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/taskbar/FallbackTaskbarUIController;
+--- a/com/android/launcher3/taskbar/FallbackTaskbarUIController.smali
++++ b/com/android/launcher3/taskbar/FallbackTaskbarUIController.smali
+@@ -214,7 +214,7 @@
+     move-result-object p0
+ 
+     .line 19
+-    invoke-virtual {p0}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p0}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 20
+     .line 21

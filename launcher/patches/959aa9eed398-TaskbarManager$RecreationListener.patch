@@ -1,0 +1,21 @@
+# class: Lcom/android/launcher3/taskbar/TaskbarManager$RecreationListener;
+--- a/com/android/launcher3/taskbar/TaskbarManager$RecreationListener.smali
++++ b/com/android/launcher3/taskbar/TaskbarManager$RecreationListener.smali
+@@ -37,7 +37,7 @@
+     .locals 3
+ 
+     .line 1
+-    invoke-virtual {p1}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p1}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 2
+     .line 3
+@@ -105,7 +105,7 @@
+ 
+     .line 34
+     .line 35
+-    invoke-virtual {p1}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p1}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 36
+     .line 37

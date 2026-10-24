@@ -1,0 +1,456 @@
+# class: Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;
+--- a/com/android/wm/shell/shared/desktopmode/DesktopModeStatus.smali
++++ b/com/android/wm/shell/shared/desktopmode/DesktopModeStatus.smali
+@@ -188,138 +188,27 @@
+ .end method
+ 
+ .method public static synthetic a(Landroid/view/Display;)Z
+-    .locals 0
+-
+-    .line 1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->lambda$deviceHasLargeScreen$1(Landroid/view/Display;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    return p0
++    .locals 1
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method public static synthetic b(Landroid/view/Display;)Z
+-    .locals 0
+-
+-    .line 1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->lambda$deviceHasLargeScreen$0(Landroid/view/Display;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    return p0
++    .locals 1
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method public static canEnterDesktopMode(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->isDeviceEligibleForDesktopMode(Landroid/content/Context;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result v0
+-
+-    .line 5
+-    if-eqz v0, :cond_0
+-
+-    .line 6
+-    .line 7
+-    sget-object v0, Landroid/window/DesktopModeFlags;->ENABLE_DESKTOP_WINDOWING_MODE:Landroid/window/DesktopModeFlags;
+-
+-    .line 8
+-    .line 9
+-    invoke-virtual {v0}, Landroid/window/DesktopModeFlags;->isTrue()Z
+-
+-    .line 10
+-    .line 11
+-    .line 12
+-    move-result v0
+-
+-    .line 13
+-    if-nez v0, :cond_1
+-
+-    .line 14
+-    .line 15
+-    :cond_0
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->isDesktopModeEnabledByDevOption(Landroid/content/Context;)Z
+-
+-    .line 16
+-    .line 17
+-    .line 18
+-    move-result p0
+-
+-    .line 19
+-    if-eqz p0, :cond_2
+-
+-    .line 20
+-    .line 21
+-    :cond_1
+-    const/4 p0, 0x1
+-
+-    .line 22
+-    return p0
+-
+-    .line 23
+-    :cond_2
+-    const/4 p0, 0x0
+-
+-    .line 24
+-    return p0
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method public static canEnterDesktopModeOrShowAppHandle(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->canEnterDesktopMode(Landroid/content/Context;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result v0
+-
+-    .line 5
+-    if-nez v0, :cond_1
+-
+-    .line 6
+-    .line 7
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->overridesShowAppHandle(Landroid/content/Context;)Z
+-
+-    .line 8
+-    .line 9
+-    .line 10
+-    move-result p0
+-
+-    .line 11
+-    if-eqz p0, :cond_0
+-
+-    .line 12
+-    .line 13
+-    goto :goto_0
+-
+-    .line 14
+-    :cond_0
+-    const/4 p0, 0x0
+-
+-    .line 15
+-    return p0
+-
+-    .line 16
+-    :cond_1
+-    :goto_0
+-    const/4 p0, 0x1
+-
+-    .line 17
+-    return p0
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method private static canInternalDisplayHostDesktops(Landroid/content/Context;)Z
+@@ -351,32 +240,9 @@
+ .end method
+ 
+ .method public static canShowDesktopModeDevOption(Landroid/content/Context;)Z
+-    .locals 0
+-
+-    .line 1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->isDeviceEligibleForDesktopModeDevOption(Landroid/content/Context;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    if-eqz p0, :cond_0
+-
+-    .line 6
+-    .line 7
+-    const/4 p0, 0x1
+-
+-    .line 8
+-    return p0
+-
+-    .line 9
+-    :cond_0
+-    const/4 p0, 0x0
+-
+-    .line 10
+-    return p0
++    .locals 1
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method private static deviceHasLargeScreen(Landroid/content/Context;)Z
+@@ -496,96 +362,21 @@
+ .end method
+ 
+ .method public static enableMultipleDesktops(Landroid/content/Context;)Z
+-    .locals 0
+-
+-    .line 1
+-    sget-object p0, Landroid/window/DesktopExperienceFlags;->ENABLE_MULTIPLE_DESKTOPS_BACKEND:Landroid/window/DesktopExperienceFlags;
+-
+-    .line 2
+-    .line 3
+-    invoke-virtual {p0}, Landroid/window/DesktopExperienceFlags;->isTrue()Z
+-
+-    .line 4
+-    .line 5
+-    .line 6
+-    const/4 p0, 0x0
+-
+-    .line 7
+-    return p0
++    .locals 1
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method public static enforceDeviceRestrictions()Z
+     .locals 1
+-
+-    .line 1
+-    sget-boolean v0, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->ENFORCE_DEVICE_RESTRICTIONS:Z
+-
+-    .line 2
+-    .line 3
++    const/4 v0, 0x0
+     return v0
+ .end method
+ 
+ .method public static enterDesktopByDefaultOnFreeformDisplay(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    sget-object v0, Landroid/window/DesktopExperienceFlags;->ENTER_DESKTOP_BY_DEFAULT_ON_FREEFORM_DISPLAYS:Landroid/window/DesktopExperienceFlags;
+-
+-    .line 2
+-    .line 3
+-    invoke-virtual {v0}, Landroid/window/DesktopExperienceFlags;->isTrue()Z
+-
+-    .line 4
+-    .line 5
+-    .line 6
+-    move-result v0
+-
+-    .line 7
+-    if-nez v0, :cond_0
+-
+-    .line 8
+-    .line 9
+-    const/4 p0, 0x0
+-
+-    .line 10
+-    return p0
+-
+-    .line 11
+-    :cond_0
+-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+-
+-    .line 12
+-    .line 13
+-    .line 14
+-    move-result-object p0
+-
+-    .line 15
+-    const v0, 0x11101a4
+-
+-    .line 16
+-    .line 17
+-    .line 18
+-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+-
+-    .line 19
+-    .line 20
+-    .line 21
+-    move-result p0
+-
+-    .line 22
+-    const-string v0, "persist.wm.debug.enter_desktop_by_default_on_freeform_display"
+-
+-    .line 23
+-    .line 24
+-    invoke-static {v0, p0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+-
+-    .line 25
+-    .line 26
+-    .line 27
+-    move-result p0
+-
+-    .line 28
+-    return p0
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method private static isDesktopModeDevOptionSupported(Landroid/content/Context;)Z
+@@ -686,103 +477,9 @@
+ .end method
+ 
+ .method public static isDeviceEligibleForDesktopMode(Landroid/content/Context;)Z
+-    .locals 3
+-
+-    .line 1
+-    invoke-static {}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->enforceDeviceRestrictions()Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result v0
+-
+-    .line 5
+-    const/4 v1, 0x1
+-
+-    .line 6
+-    if-nez v0, :cond_0
+-
+-    .line 7
+-    .line 8
+-    return v1
+-
+-    .line 9
+-    :cond_0
+-    sget-object v0, Landroid/window/DesktopExperienceFlags;->ENABLE_PROJECTED_DISPLAY_DESKTOP_MODE:Landroid/window/DesktopExperienceFlags;
+-
+-    .line 10
+-    .line 11
+-    invoke-virtual {v0}, Landroid/window/DesktopExperienceFlags;->isTrue()Z
+-
+-    .line 12
+-    .line 13
+-    .line 14
+-    move-result v0
+-
+-    .line 15
+-    const/4 v2, 0x0
+-
+-    .line 16
+-    if-eqz v0, :cond_1
+-
+-    .line 17
+-    .line 18
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->isDesktopModeSupported(Landroid/content/Context;)Z
+-
+-    .line 19
+-    .line 20
+-    .line 21
+-    move-result p0
+-
+-    .line 22
+-    goto :goto_0
+-
+-    .line 23
+-    :cond_1
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->isDesktopModeSupported(Landroid/content/Context;)Z
+-
+-    .line 24
+-    .line 25
+-    .line 26
+-    move-result v0
+-
+-    .line 27
+-    if-eqz v0, :cond_2
+-
+-    .line 28
+-    .line 29
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->canInternalDisplayHostDesktops(Landroid/content/Context;)Z
+-
+-    .line 30
+-    .line 31
+-    .line 32
+-    move-result p0
+-
+-    .line 33
+-    if-eqz p0, :cond_2
+-
+-    .line 34
+-    .line 35
+-    move p0, v1
+-
+-    .line 36
+-    goto :goto_0
+-
+-    .line 37
+-    :cond_2
+-    move p0, v2
+-
+-    .line 38
+-    :goto_0
+-    if-nez p0, :cond_3
+-
+-    .line 39
+-    .line 40
+-    return v2
+-
+-    .line 41
+-    :cond_3
+-    return v1
++    .locals 1
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method private static isDeviceEligibleForDesktopModeDevOption(Landroid/content/Context;)Z
+@@ -927,52 +624,12 @@
+ 
+ .method public static overridesShowAppHandle(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    invoke-static {}, Lcom/android/wm/shell/shared/bubbles/BubbleAnythingFlagHelper;->enableBubbleToFullscreen()Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result v0
+-
+-    .line 5
+-    if-eqz v0, :cond_0
+-
+-    .line 6
+-    .line 7
+-    invoke-static {p0}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->deviceHasLargeScreen(Landroid/content/Context;)Z
+-
+-    .line 8
+-    .line 9
+-    .line 10
+-    move-result p0
+-
+-    .line 11
+-    if-eqz p0, :cond_0
+-
+-    .line 12
+-    .line 13
+-    const/4 p0, 0x1
+-
+-    .line 14
+-    return p0
+-
+-    .line 15
+-    :cond_0
+-    const/4 p0, 0x0
+-
+-    .line 16
+-    return p0
++    const/4 v0, 0x0
++    return v0
+ .end method
+ 
+ .method public static useRoundedCorners()Z
+     .locals 1
+-
+-    .line 1
+-    sget-boolean v0, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->USE_ROUNDED_CORNERS:Z
+-
+-    .line 2
+-    .line 3
+-    return v0
+-.end method
++    const/4 v0, 0x0
++    return v0
++.end method

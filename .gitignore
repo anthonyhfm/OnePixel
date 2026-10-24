@@ -1,0 +1,22 @@
+# Local editor and build state
+.DS_Store
+.idea/
+*.iml
+.gradle/
+.kotlin/
+**/build/
+local.properties
+
+# Emulator/device inputs, generated binaries, diagnostics and signing material
+*.apk
+*.apks
+*.aab
+*.dex
+*.keystore
+*.jks
+*.log
+__pycache__/
+**/artifacts/
+**/work/
+**/diagnostics/
+

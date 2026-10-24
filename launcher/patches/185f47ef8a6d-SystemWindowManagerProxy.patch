@@ -1,0 +1,401 @@
+# class: Lcom/android/quickstep/util/SystemWindowManagerProxy;
+--- a/com/android/quickstep/util/SystemWindowManagerProxy.smali
++++ b/com/android/quickstep/util/SystemWindowManagerProxy.smali
+@@ -12,7 +12,7 @@
+     .locals 1
+ 
+     .line 1
+-    const/4 v0, 0x1
++    const/4 v0, 0x0
+ 
+     .line 2
+     invoke-direct {p0, v0}, Lcom/android/launcher3/util/window/WindowManagerProxy;-><init>(Z)V
+@@ -30,228 +30,38 @@
+ 
+ # virtual methods
+ .method public estimateInternalDisplayBounds(Landroid/content/Context;)Landroid/util/ArrayMap;
+-    .locals 5
+-
+-    .line 1
+-    new-instance v0, Landroid/util/ArrayMap;
+-
+-    .line 2
+-    .line 3
+-    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+-
+-    .line 4
+-    .line 5
+-    .line 6
+-    const-class v1, Landroid/view/WindowManager;
+-
+-    .line 7
+-    .line 8
+-    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+-
+-    .line 9
+-    .line 10
+-    .line 11
+-    move-result-object v1
+-
+-    .line 12
+-    check-cast v1, Landroid/view/WindowManager;
+-
+-    .line 13
+-    .line 14
+-    const/4 v2, 0x0
+-
+-    .line 15
+-    invoke-interface {v1, v2}, Landroid/view/WindowManager;->getPossibleMaximumWindowMetrics(I)Ljava/util/Set;
+-
+-    .line 16
+-    .line 17
+-    .line 18
+-    move-result-object v1
+-
+-    .line 19
+-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+-
+-    .line 20
+-    .line 21
+-    .line 22
+-    move-result-object v1
+-
+-    .line 23
+-    :goto_0
+-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+-
+-    .line 24
+-    .line 25
+-    .line 26
+-    move-result v3
+-
+-    .line 27
+-    if-eqz v3, :cond_0
+-
+-    .line 28
+-    .line 29
+-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+-
+-    .line 30
+-    .line 31
+-    .line 32
+-    move-result-object v3
+-
+-    .line 33
+-    check-cast v3, Landroid/view/WindowMetrics;
+-
+-    .line 34
+-    .line 35
+-    invoke-virtual {p0, v3, v2}, Lcom/android/launcher3/util/window/WindowManagerProxy;->getDisplayInfo(Landroid/view/WindowMetrics;I)Lcom/android/launcher3/util/window/CachedDisplayInfo;
+-
+-    .line 36
+-    .line 37
+-    .line 38
+-    move-result-object v3
+-
+-    .line 39
+-    invoke-virtual {p0, p1, v3}, Lcom/android/launcher3/util/window/WindowManagerProxy;->estimateWindowBounds(Landroid/content/Context;Lcom/android/launcher3/util/window/CachedDisplayInfo;)Ljava/util/List;
+-
+-    .line 40
+-    .line 41
+-    .line 42
+-    move-result-object v4
+-
+-    .line 43
+-    invoke-virtual {v0, v3, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    .line 44
+-    .line 45
+-    .line 46
+-    goto :goto_0
+-
+-    .line 47
+-    :cond_0
++    .locals 1
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->estimateInternalDisplayBounds(Landroid/content/Context;)Landroid/util/ArrayMap;
++    move-result-object v0
+     return-object v0
+ .end method
+ 
+ .method public getCurrentBounds(Landroid/content/Context;)Landroid/graphics/Rect;
+-    .locals 0
+-
+-    .line 1
+-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result-object p0
+-
+-    .line 5
+-    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+-
+-    .line 6
+-    .line 7
+-    .line 8
+-    move-result-object p0
+-
+-    .line 9
+-    iget-object p0, p0, Landroid/content/res/Configuration;->windowConfiguration:Landroid/app/WindowConfiguration;
+-
+-    .line 10
+-    .line 11
+-    invoke-virtual {p0}, Landroid/app/WindowConfiguration;->getMaxBounds()Landroid/graphics/Rect;
+-
+-    .line 12
+-    .line 13
+-    .line 14
+-    move-result-object p0
+-
+-    .line 15
+-    return-object p0
++    .locals 1
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->getCurrentBounds(Landroid/content/Context;)Landroid/graphics/Rect;
++    move-result-object v0
++    return-object v0
+ .end method
+ 
+ .method public getRotation(Landroid/content/Context;)I
+-    .locals 0
+-
+-    .line 1
+-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result-object p0
+-
+-    .line 5
+-    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+-
+-    .line 6
+-    .line 7
+-    .line 8
+-    move-result-object p0
+-
+-    .line 9
+-    iget-object p0, p0, Landroid/content/res/Configuration;->windowConfiguration:Landroid/app/WindowConfiguration;
+-
+-    .line 10
+-    .line 11
+-    invoke-virtual {p0}, Landroid/app/WindowConfiguration;->getRotation()I
+-
+-    .line 12
+-    .line 13
+-    .line 14
+-    move-result p0
+-
+-    .line 15
+-    return p0
++    .locals 1
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->getRotation(Landroid/content/Context;)I
++    move-result v0
++    return v0
+ .end method
+ 
+ .method public getStatusBarHeight(Landroid/content/Context;ZI)I
+-    .locals 0
+-
+-    .line 1
+-    invoke-static {p1}, Lcom/android/internal/policy/SystemBarUtils;->getStatusBarHeight(Landroid/content/Context;)I
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    return p0
++    .locals 1
++    invoke-super {p0, p1, p2, p3}, Lcom/android/launcher3/util/window/WindowManagerProxy;->getStatusBarHeight(Landroid/content/Context;ZI)I
++    move-result v0
++    return v0
+ .end method
+ 
+ .method public isHomeVisible(Landroid/content/Context;)Z
+-    .locals 0
+-
+-    .line 1
+-    sget-object p0, Lcom/android/quickstep/SystemUiProxy;->INSTANCE:Lcom/android/launcher3/util/DaggerSingletonObject;
+-
+-    .line 2
+-    .line 3
+-    invoke-virtual {p0, p1}, Lcom/android/launcher3/util/DaggerSingletonObject;->get(Landroid/content/Context;)Ljava/lang/Object;
+-
+-    .line 4
+-    .line 5
+-    .line 6
+-    move-result-object p0
+-
+-    .line 7
+-    check-cast p0, Lcom/android/quickstep/SystemUiProxy;
+-
+-    .line 8
+-    .line 9
+-    invoke-virtual {p0}, Lcom/android/quickstep/SystemUiProxy;->getHomeVisibilityState()Lcom/android/quickstep/HomeVisibilityState;
+-
+-    .line 10
+-    .line 11
+-    .line 12
+-    move-result-object p0
+-
+-    .line 13
+-    invoke-virtual {p0}, Lcom/android/quickstep/HomeVisibilityState;->isHomeVisible()Z
+-
+-    .line 14
+-    .line 15
+-    .line 16
+-    move-result p0
+-
+-    .line 17
+-    return p0
++    .locals 1
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->isHomeVisible(Landroid/content/Context;)Z
++    move-result v0
++    return v0
+ .end method
+ 
+ .method public isInDesktopMode(I)Z
+@@ -290,132 +100,23 @@
+ .end method
+ 
+ .method public rotateCutout(Landroid/view/DisplayCutout;IIII)Landroid/view/DisplayCutout;
+-    .locals 0
+-
+-    .line 1
+-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/view/DisplayCutout;->getRotated(IIII)Landroid/view/DisplayCutout;
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result-object p0
+-
+-    .line 5
+-    return-object p0
++    .locals 1
++    invoke-super/range {p0 .. p5}, Lcom/android/launcher3/util/window/WindowManagerProxy;->rotateCutout(Landroid/view/DisplayCutout;IIII)Landroid/view/DisplayCutout;
++    move-result-object v0
++    return-object v0
+ .end method
+ 
+ .method public showDesktopTaskbarForFreeformDisplay(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    invoke-static {p1}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->canEnterDesktopMode(Landroid/content/Context;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    const/4 v0, 0x0
+-
+-    .line 6
+-    if-nez p0, :cond_0
+-
+-    .line 7
+-    .line 8
+-    return v0
+-
+-    .line 9
+-    :cond_0
+-    invoke-static {p1}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->enterDesktopByDefaultOnFreeformDisplay(Landroid/content/Context;)Z
+-
+-    .line 10
+-    .line 11
+-    .line 12
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->showDesktopTaskbarForFreeformDisplay(Landroid/content/Context;)Z
++    move-result v0
+     return v0
+ .end method
+ 
+ .method public showLockedTaskbarOnHome(Landroid/content/Context;)Z
+     .locals 1
+-
+-    .line 1
+-    invoke-static {p1}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->canEnterDesktopMode(Landroid/content/Context;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result p0
+-
+-    .line 5
+-    const/4 v0, 0x0
+-
+-    .line 6
+-    if-nez p0, :cond_0
+-
+-    .line 7
+-    .line 8
+-    return v0
+-
+-    .line 9
+-    :cond_0
+-    invoke-static {p1}, Lcom/android/wm/shell/shared/desktopmode/DesktopModeStatus;->enterDesktopByDefaultOnFreeformDisplay(Landroid/content/Context;)Z
+-
+-    .line 10
+-    .line 11
+-    .line 12
+-    move-result p0
+-
+-    .line 13
+-    if-nez p0, :cond_1
+-
+-    .line 14
+-    .line 15
+-    return v0
+-
+-    .line 16
+-    :cond_1
+-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+-
+-    .line 17
+-    .line 18
+-    .line 19
+-    move-result-object p0
+-
+-    .line 20
+-    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+-
+-    .line 21
+-    .line 22
+-    .line 23
+-    move-result-object p0
+-
+-    .line 24
+-    iget-object p0, p0, Landroid/content/res/Configuration;->windowConfiguration:Landroid/app/WindowConfiguration;
+-
+-    .line 25
+-    .line 26
+-    invoke-virtual {p0}, Landroid/app/WindowConfiguration;->getWindowingMode()I
+-
+-    .line 27
+-    .line 28
+-    .line 29
+-    move-result p0
+-
+-    .line 30
+-    const/4 p1, 0x5
+-
+-    .line 31
+-    if-ne p0, p1, :cond_2
+-
+-    .line 32
+-    .line 33
+-    const/4 p0, 0x1
+-
+-    .line 34
+-    return p0
+-
+-    .line 35
+-    :cond_2
++    invoke-super {p0, p1}, Lcom/android/launcher3/util/window/WindowManagerProxy;->showLockedTaskbarOnHome(Landroid/content/Context;)Z
++    move-result v0
+     return v0
+ .end method
+ 

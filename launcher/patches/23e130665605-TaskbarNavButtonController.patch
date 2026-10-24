@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/taskbar/TaskbarNavButtonController;
+--- a/com/android/launcher3/taskbar/TaskbarNavButtonController.smali
++++ b/com/android/launcher3/taskbar/TaskbarNavButtonController.smali
+@@ -518,7 +518,7 @@
+ 
+     .line 12
+     .line 13
+-    invoke-virtual {p0}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p0}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 14
+     .line 15

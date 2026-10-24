@@ -1,0 +1,12 @@
+# class: Lcom/android/quickstep/util/SwipePipToHomeAnimator$Builder;
+--- a/com/android/quickstep/util/SwipePipToHomeAnimator$Builder.smali
++++ b/com/android/quickstep/util/SwipePipToHomeAnimator$Builder.smali
+@@ -186,7 +186,7 @@
+ 
+     .line 53
+     .line 54
+-    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->inset(Landroid/graphics/Rect;)V
++    invoke-static {v1, v2}, Lorg/onepixel/compat/DisplayCompat;->inset(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     .line 55
+     .line 56

@@ -1,0 +1,85 @@
+# class: Lcom/android/systemui/shared/system/TaskStackChangeListeners;
+--- a/com/android/systemui/shared/system/TaskStackChangeListeners.smali
++++ b/com/android/systemui/shared/system/TaskStackChangeListeners.smali
+@@ -144,79 +144,11 @@
+ .end method
+ 
+ .method public registerTaskStackListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
+-    .locals 1
+-
+-    .line 1
+-    iget-object v0, p0, Lcom/android/systemui/shared/system/TaskStackChangeListeners;->mImpl:Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;
+-
+-    .line 2
+-    .line 3
+-    monitor-enter v0
+-
+-    .line 4
+-    :try_start_0
+-    iget-object p0, p0, Lcom/android/systemui/shared/system/TaskStackChangeListeners;->mImpl:Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;
+-
+-    .line 5
+-    .line 6
+-    invoke-virtual {p0, p1}, Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;->addListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
+-
+-    .line 7
+-    .line 8
+-    .line 9
+-    monitor-exit v0
+-
+-    .line 10
++    .locals 0
+     return-void
+-
+-    .line 11
+-    :catchall_0
+-    move-exception p0
+-
+-    .line 12
+-    monitor-exit v0
+-    :try_end_0
+-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+-
+-    .line 13
+-    throw p0
+ .end method
+ 
+ .method public unregisterTaskStackListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
+-    .locals 1
+-
+-    .line 1
+-    iget-object v0, p0, Lcom/android/systemui/shared/system/TaskStackChangeListeners;->mImpl:Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;
+-
+-    .line 2
+-    .line 3
+-    monitor-enter v0
+-
+-    .line 4
+-    :try_start_0
+-    iget-object p0, p0, Lcom/android/systemui/shared/system/TaskStackChangeListeners;->mImpl:Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;
+-
+-    .line 5
+-    .line 6
+-    invoke-virtual {p0, p1}, Lcom/android/systemui/shared/system/TaskStackChangeListeners$Impl;->removeListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
+-
+-    .line 7
+-    .line 8
+-    .line 9
+-    monitor-exit v0
+-
+-    .line 10
++    .locals 0
+     return-void
+-
+-    .line 11
+-    :catchall_0
+-    move-exception p0
+-
+-    .line 12
+-    monitor-exit v0
+-    :try_end_0
+-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+-
+-    .line 13
+-    throw p0
+ .end method

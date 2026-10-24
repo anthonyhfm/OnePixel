@@ -1,0 +1,21 @@
+# class: Lcom/android/quickstep/RecentsActivity;
+--- a/com/android/quickstep/RecentsActivity.smali
++++ b/com/android/quickstep/RecentsActivity.smali
+@@ -835,7 +835,7 @@
+     .line 35
+     .line 36
+     .line 37
+-    invoke-static {v0, v2}, Landroid/app/ActivityOptions;->makeRemoteAnimation(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
++    invoke-static {v0, v2}, Lorg/onepixel/compat/TaskBridge;->makeLaunchOptions(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
+ 
+     .line 38
+     .line 39
+@@ -1310,7 +1310,7 @@
+     .line 68
+     .line 69
+     .line 70
+-    invoke-static {v3, v0}, Landroid/app/ActivityOptions;->makeRemoteAnimation(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
++    invoke-static {v3, v0}, Lorg/onepixel/compat/TaskBridge;->makeLaunchOptions(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
+ 
+     .line 71
+     .line 72

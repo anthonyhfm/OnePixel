@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/taskbar/TaskbarManager;
+--- a/com/android/launcher3/taskbar/TaskbarManager.smali
++++ b/com/android/launcher3/taskbar/TaskbarManager.smali
+@@ -341,7 +341,7 @@
+ 
+     .line 115
+     .line 116
+-    invoke-virtual {p1}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p1}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 117
+     .line 118

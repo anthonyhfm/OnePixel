@@ -1,0 +1,15 @@
+# class: Lcom/google/android/apps/nexuslauncher/allapps/n2;
+--- a/com/google/android/apps/nexuslauncher/allapps/n2.smali
++++ b/com/google/android/apps/nexuslauncher/allapps/n2.smali
+@@ -260,6 +260,11 @@
+ 
+ .method public static m(Lcom/google/android/apps/nexuslauncher/allapps/t0;ILandroid/view/View;Landroid/app/search/SearchTarget;)V
+     .locals 11
++    invoke-static {p2, p3, p1}, Lorg/onepixel/compat/SearchCompat;->openTarget(Landroid/view/View;Ljava/lang/Object;I)Z
++    move-result v0
++    if-eqz v0, :onepixel_native_target
++    return-void
++    :onepixel_native_target
+ 
+     .line 1
+     const/4 v0, 0x5

@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/statehandlers/DesktopVisibilityController;
+--- a/com/android/launcher3/statehandlers/DesktopVisibilityController.smali
++++ b/com/android/launcher3/statehandlers/DesktopVisibilityController.smali
+@@ -149,7 +149,7 @@
+ 
+     .line 37
+     .line 38
+-    invoke-virtual {p1}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {p1}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 39
+     .line 40

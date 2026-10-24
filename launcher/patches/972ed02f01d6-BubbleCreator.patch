@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/taskbar/bubbles/BubbleCreator;
+--- a/com/android/launcher3/taskbar/bubbles/BubbleCreator.smali
++++ b/com/android/launcher3/taskbar/bubbles/BubbleCreator.smali
+@@ -906,7 +906,7 @@
+     .line 239
+     .line 240
+     .line 241
+-    invoke-static {v3, v4, v5}, Lcom/android/internal/graphics/ColorUtils;->blendARGB(IIF)I
++    invoke-static {v3, v4, v5}, Lorg/onepixel/compat/ColorCompat;->blendARGB(IIF)I
+ 
+     .line 242
+     .line 243

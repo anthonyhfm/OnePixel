@@ -1,0 +1,12 @@
+# class: Lt3/J;
+--- a/t3/J.smali
++++ b/t3/J.smali
+@@ -2174,7 +2174,7 @@
+ 
+     .line 6
+     .line 7
+-    invoke-static {v0, v2, v1}, Lcom/android/internal/graphics/ColorUtils;->blendARGB(IIF)I
++    invoke-static {v0, v2, v1}, Lorg/onepixel/compat/ColorCompat;->blendARGB(IIF)I
+ 
+     .line 8
+     .line 9

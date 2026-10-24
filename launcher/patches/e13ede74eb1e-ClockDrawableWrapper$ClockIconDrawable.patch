@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/icons/ClockDrawableWrapper$ClockIconDrawable;
+--- a/com/android/launcher3/icons/ClockDrawableWrapper$ClockIconDrawable.smali
++++ b/com/android/launcher3/icons/ClockDrawableWrapper$ClockIconDrawable.smali
+@@ -394,7 +394,7 @@
+ 
+     .line 59
+     .line 60
+-    invoke-virtual {p2}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {p2}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     .line 61
+     .line 62

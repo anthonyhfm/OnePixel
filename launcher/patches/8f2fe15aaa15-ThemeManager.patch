@@ -1,0 +1,15 @@
+# class: Lcom/android/launcher3/graphics/ThemeManager;
+--- a/com/android/launcher3/graphics/ThemeManager.smali
++++ b/com/android/launcher3/graphics/ThemeManager.smali
+@@ -521,6 +521,11 @@
+ 
+     .line 11
+     check-cast v1, Ljava/lang/String;
++    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
++    move-result v2
++    if-eqz v2, :onepixel_shape_selected
++    const-string v1, "circle"
++    :onepixel_shape_selected
+ 
+     .line 12
+     .line 13

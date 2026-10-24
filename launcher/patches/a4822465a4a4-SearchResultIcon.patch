@@ -1,0 +1,12 @@
+# class: Lcom/google/android/apps/nexuslauncher/allapps/SearchResultIcon;
+--- a/com/google/android/apps/nexuslauncher/allapps/SearchResultIcon.smali
++++ b/com/google/android/apps/nexuslauncher/allapps/SearchResultIcon.smali
+@@ -2985,7 +2985,7 @@
+     .line 13
+     .line 14
+     .line 15
+-    invoke-virtual {v1}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {v1}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     .line 16
+     .line 17

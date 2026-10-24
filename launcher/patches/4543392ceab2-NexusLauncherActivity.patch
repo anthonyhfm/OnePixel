@@ -1,0 +1,12 @@
+# class: Lcom/google/android/apps/nexuslauncher/NexusLauncherActivity;
+--- a/com/google/android/apps/nexuslauncher/NexusLauncherActivity.smali
++++ b/com/google/android/apps/nexuslauncher/NexusLauncherActivity.smali
+@@ -2425,7 +2425,7 @@
+     move-result v1
+ 
+     .line 56
+-    if-eqz v1, :cond_0
++    goto :cond_0
+ 
+     .line 57
+     .line 58

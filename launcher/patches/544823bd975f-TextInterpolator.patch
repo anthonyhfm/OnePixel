@@ -1,0 +1,12 @@
+# class: Lcom/android/systemui/animation/TextInterpolator;
+--- a/com/android/systemui/animation/TextInterpolator.smali
++++ b/com/android/systemui/animation/TextInterpolator.smali
+@@ -1194,7 +1194,7 @@
+     move-result v0
+ 
+     .line 27
+-    invoke-static {p0, v0, p3}, Lcom/android/internal/graphics/ColorUtils;->blendARGB(IIF)I
++    invoke-static {p0, v0, p3}, Lorg/onepixel/compat/ColorCompat;->blendARGB(IIF)I
+ 
+     .line 28
+     .line 29

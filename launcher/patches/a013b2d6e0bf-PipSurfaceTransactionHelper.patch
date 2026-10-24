@@ -1,0 +1,21 @@
+# class: Lcom/android/systemui/shared/pip/PipSurfaceTransactionHelper;
+--- a/com/android/systemui/shared/pip/PipSurfaceTransactionHelper.smali
++++ b/com/android/systemui/shared/pip/PipSurfaceTransactionHelper.smali
+@@ -316,7 +316,7 @@
+ 
+     .line 12
+     .line 13
+-    invoke-virtual {v0, p6}, Landroid/graphics/Rect;->inset(Landroid/graphics/Rect;)V
++    invoke-static {v0, p6}, Lorg/onepixel/compat/DisplayCompat;->inset(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     .line 14
+     .line 15
+@@ -878,7 +878,7 @@
+ 
+     .line 12
+     .line 13
+-    invoke-virtual {v0, p5}, Landroid/graphics/Rect;->inset(Landroid/graphics/Rect;)V
++    invoke-static {v0, p5}, Lorg/onepixel/compat/DisplayCompat;->inset(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+ 
+     .line 14
+     .line 15

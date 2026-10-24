@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/graphics/ShapeDelegate$Companion;
+--- a/com/android/launcher3/graphics/ShapeDelegate$Companion.smali
++++ b/com/android/launcher3/graphics/ShapeDelegate$Companion.smali
+@@ -387,7 +387,7 @@
+     invoke-virtual {v0, v1, v1, v2, v2}, Landroid/graphics/drawable/AdaptiveIconDrawable;->setBounds(IIII)V
+ 
+     .line 8
+-    invoke-virtual {v0}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {v0}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     move-result-object v0
+ 

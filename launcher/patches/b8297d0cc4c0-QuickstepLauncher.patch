@@ -1,0 +1,17 @@
+# class: Lcom/android/launcher3/uioverrides/QuickstepLauncher;
+--- a/com/android/launcher3/uioverrides/QuickstepLauncher.smali
++++ b/com/android/launcher3/uioverrides/QuickstepLauncher.smali
+@@ -4177,12 +4177,7 @@
+     move-result-object v1
+ 
+     .line 11
+-    invoke-virtual {v1}, Landroid/content/pm/ApplicationInfo;->isOnBackInvokedCallbackEnabled()Z
+-
+-    .line 12
+-    .line 13
+-    .line 14
+-    move-result v1
++    const/4 v1, 0x1
+ 
+     .line 15
+     iput-boolean v1, v0, Lcom/android/launcher3/DeviceProfile;->isPredictiveBackSwipe:Z

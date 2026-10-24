@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/icons/PlaceHolderIconDrawable;
+--- a/com/android/launcher3/icons/PlaceHolderIconDrawable.smali
++++ b/com/android/launcher3/icons/PlaceHolderIconDrawable.smali
+@@ -128,7 +128,7 @@
+ 
+     .line 25
+     .line 26
+-    invoke-virtual {p0}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {p0}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     .line 27
+     .line 28

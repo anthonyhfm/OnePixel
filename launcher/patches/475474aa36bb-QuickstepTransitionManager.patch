@@ -1,0 +1,30 @@
+# class: Lcom/android/launcher3/QuickstepTransitionManager;
+--- a/com/android/launcher3/QuickstepTransitionManager.smali
++++ b/com/android/launcher3/QuickstepTransitionManager.smali
+@@ -4994,7 +4994,7 @@
+ 
+     .line 11
+     .line 12
+-    invoke-virtual {v0}, Landroid/app/Activity;->unregisterRemoteAnimations()V
++    invoke-static {v0}, Lorg/onepixel/compat/TaskBridge;->unregisterRemoteAnimations(Landroid/app/Activity;)V
+ 
+     .line 13
+     .line 14
+@@ -6185,7 +6185,7 @@
+     .line 74
+     .line 75
+     .line 76
+-    invoke-static {v4, p1}, Landroid/app/ActivityOptions;->makeRemoteAnimation(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
++    invoke-static {v4, p1}, Lorg/onepixel/compat/TaskBridge;->makeLaunchOptions(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
+ 
+     .line 77
+     .line 78
+@@ -7232,7 +7232,7 @@
+ 
+     .line 19
+     .line 20
+-    invoke-virtual {p0, v0}, Landroid/app/Activity;->registerRemoteAnimations(Landroid/view/RemoteAnimationDefinition;)V
++    invoke-static {p0, v0}, Lorg/onepixel/compat/TaskBridge;->registerRemoteAnimations(Landroid/app/Activity;Landroid/view/RemoteAnimationDefinition;)V
+ 
+     .line 21
+     .line 22

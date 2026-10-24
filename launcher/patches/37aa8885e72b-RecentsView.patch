@@ -1,0 +1,12 @@
+# class: Lcom/android/quickstep/views/RecentsView;
+--- a/com/android/quickstep/views/RecentsView.smali
++++ b/com/android/quickstep/views/RecentsView.smali
+@@ -1068,7 +1068,7 @@
+ 
+     .line 268
+     .line 269
+-    invoke-virtual {v10}, Landroid/content/Context;->getDisplayId()I
++    invoke-static {v10}, Lorg/onepixel/compat/DisplayCompat;->getDisplayId(Landroid/content/Context;)I
+ 
+     .line 270
+     .line 271

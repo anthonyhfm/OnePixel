@@ -1,0 +1,21 @@
+# class: Lcom/android/launcher3/icons/BaseIconFactory;
+--- a/com/android/launcher3/icons/BaseIconFactory.smali
++++ b/com/android/launcher3/icons/BaseIconFactory.smali
+@@ -1452,7 +1452,7 @@
+     .locals 0
+ 
+     .line 1
+-    invoke-virtual {p2, p1}, Landroid/graphics/drawable/AdaptiveIconDrawable;->draw(Landroid/graphics/Canvas;)V
++    invoke-static {p2, p1}, Lorg/onepixel/compat/IconShapeCompat;->draw(Landroid/graphics/drawable/AdaptiveIconDrawable;Landroid/graphics/Canvas;)V
+ 
+     .line 2
+     .line 3
+@@ -1599,7 +1599,7 @@
+     .locals 0
+ 
+     .line 1
+-    invoke-virtual {p1}, Landroid/graphics/drawable/AdaptiveIconDrawable;->getIconMask()Landroid/graphics/Path;
++    invoke-static {p1}, Lorg/onepixel/compat/IconShapeCompat;->getMask(Landroid/graphics/drawable/AdaptiveIconDrawable;)Landroid/graphics/Path;
+ 
+     .line 2
+     .line 3

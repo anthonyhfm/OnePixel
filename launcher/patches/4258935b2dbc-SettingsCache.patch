@@ -1,0 +1,30 @@
+# class: Lcom/android/launcher3/util/SettingsCache;
+--- a/com/android/launcher3/util/SettingsCache.smali
++++ b/com/android/launcher3/util/SettingsCache.smali
+@@ -452,7 +452,7 @@
+ 
+     .line 20
+     .line 21
+-    invoke-static {v1, v0, p2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
++    invoke-static {v1, v0, p2}, Lorg/onepixel/compat/SettingsCompat;->systemInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+ 
+     .line 22
+     .line 23
+@@ -500,7 +500,7 @@
+ 
+     .line 42
+     .line 43
+-    invoke-static {v1, v0, p2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
++    invoke-static {v1, v0, p2}, Lorg/onepixel/compat/SettingsCompat;->globalInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+ 
+     .line 44
+     .line 45
+@@ -520,7 +520,7 @@
+ 
+     .line 51
+     .line 52
+-    invoke-static {v1, v0, p2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
++    invoke-static {v1, v0, p2}, Lorg/onepixel/compat/SettingsCompat;->secureInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+ 
+     .line 53
+     .line 54

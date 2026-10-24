@@ -1,0 +1,21 @@
+# class: Lcom/google/android/systemui/smartspace/WeatherSmartspaceView;
+--- a/com/google/android/systemui/smartspace/WeatherSmartspaceView.smali
++++ b/com/google/android/systemui/smartspace/WeatherSmartspaceView.smali
+@@ -1356,7 +1356,7 @@
+     const/4 v1, -0x1
+ 
+     .line 6
+-    invoke-static {v0, v1, p1}, Lcom/android/internal/graphics/ColorUtils;->blendARGB(IIF)I
++    invoke-static {v0, v1, p1}, Lorg/onepixel/compat/ColorCompat;->blendARGB(IIF)I
+ 
+     .line 7
+     .line 8
+@@ -1602,7 +1602,7 @@
+ 
+     .line 5
+     .line 6
+-    invoke-static {p1, v0, v1}, Lcom/android/internal/graphics/ColorUtils;->blendARGB(IIF)I
++    invoke-static {p1, v0, v1}, Lorg/onepixel/compat/ColorCompat;->blendARGB(IIF)I
+ 
+     .line 7
+     .line 8
