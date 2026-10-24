@@ -15,7 +15,7 @@
      .line 75
      .line 76
 -    invoke-static {v4, p1}, Landroid/app/ActivityOptions;->makeRemoteAnimation(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
-+    invoke-static {v4, p1}, Lorg/onepixel/compat/TaskBridge;->makeLaunchOptions(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
++    invoke-static {v4, p1}, Lorg/onepixel/compat/LaunchBridge;->makeLaunchOptions(Landroid/view/RemoteAnimationAdapter;Landroid/window/RemoteTransition;)Landroid/app/ActivityOptions;
  
      .line 77
      .line 78

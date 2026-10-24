@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/util/ActivityOptionsWrapper;
+--- a/com/android/launcher3/util/ActivityOptionsWrapper.smali
++++ b/com/android/launcher3/util/ActivityOptionsWrapper.smali
+@@ -40,7 +40,7 @@
+ 
+     .line 2
+     .line 3
+-    invoke-virtual {p0}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
++    invoke-static {p0}, Lorg/onepixel/compat/LaunchBridge;->toBundle(Landroid/app/ActivityOptions;)Landroid/os/Bundle;
+ 
+     .line 4
+     .line 5

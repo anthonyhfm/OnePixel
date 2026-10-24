@@ -1,0 +1,12 @@
+# class: Lcom/android/launcher3/views/ActivityContext;
+--- a/com/android/launcher3/views/ActivityContext.smali
++++ b/com/android/launcher3/views/ActivityContext.smali
+@@ -1849,7 +1849,7 @@
+     .line 176
+     :cond_8
+     :goto_4
+-    invoke-virtual {v1, p2, v10}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
++    invoke-static {v1, p2, v10}, Lorg/onepixel/compat/LaunchBridge;->startActivity(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
+ 
+     .line 177
+     .line 178

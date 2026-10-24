@@ -1,7 +1,7 @@
 # class: Lcom/android/systemui/shared/system/QuickStepContract;
 --- a/com/android/systemui/shared/system/QuickStepContract.smali
 +++ b/com/android/systemui/shared/system/QuickStepContract.smali
-@@ -1052,18 +1052,9 @@
+@@ -1052,18 +1052,10 @@
  .end method
  
  .method public static getWindowCornerRadius(Landroid/content/Context;)F
@@ -18,12 +18,13 @@
 -    .line 5
 -    return p0
 +    .locals 1
-+    const/4 v0, 0x0
++    invoke-static {p0}, Lorg/onepixel/compat/WindowCornerCompat;->getRadius(Landroid/content/Context;)F
++    move-result v0
 +    return v0
  .end method
  
  .method public static isAssistantGestureDisabled(J)Z
-@@ -1185,16 +1176,7 @@
+@@ -1185,16 +1177,8 @@
  .end method
  
  .method public static supportsRoundedCornersOnWindows(Landroid/content/res/Resources;)Z
@@ -40,6 +41,7 @@
 -    .line 5
 -    return p0
 +    .locals 1
-+    const/4 v0, 0x0
++    invoke-static {p0}, Lorg/onepixel/compat/WindowCornerCompat;->supportsRoundedCorners(Landroid/content/res/Resources;)Z
++    move-result v0
 +    return v0
  .end method
